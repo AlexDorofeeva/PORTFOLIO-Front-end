@@ -26,6 +26,7 @@
             max-width: 1200px;
             margin: 0 auto;
             padding: 20px;
+            z-index: 1;
         }
 
         /* Navbar */
@@ -66,7 +67,7 @@
             padding: 50px 20px;
             background: linear-gradient(135deg, #007BFF, #00C6FF);
             color: #fff;
-            border-radius: 10px;
+            border-radius: 0px 0px 10px 10px ;
             margin-bottom: 20px;
         }
 
@@ -132,7 +133,7 @@
             width: 100%;
             height: 100%;
             pointer-events: none;
-            z-index: 0; /* Ensure snowflakes are behind all content */
+            z-index: -10; /* Ensure snowflakes are behind all content */
         }
 
         .snowflake {
@@ -140,7 +141,7 @@
             top: -10px; /* Start from the top of the header */
             opacity: 0.8;
             pointer-events: none;
-            z-index: -1;
+            z-index: -10;
             font-size: 1.5rem;
             user-select: none;
             animation: fall linear infinite;
@@ -148,7 +149,7 @@
 
         /* Snowflake color for light mode */
         .snowflake {
-            color: #135ba3; /* Dark blue for light mode */
+            color: #5da7f1; /* Dark blue for light mode */
         }
 
         /* Snowflake color for dark mode */
@@ -166,6 +167,7 @@
                 opacity: 0.4;
             }
         }
+
 
         .dark-mode-btn {
             position: fixed;
@@ -232,8 +234,8 @@
             const size = Math.random() * 15 + 20; // Snowflakes will be slightly larger
             snowflake.style.fontSize = `${size}px`;
             snowflake.style.left = `${Math.random() * 100}vw`; // Random horizontal position
-            snowflake.style.animationDuration = `${Math.random() * 6 + 6}s`; // Slower speed
-            snowflake.style.animationDelay = `${Math.random() * 5}s`; // Random delay
+            snowflake.style.animationDuration = `${Math.random() * 6 + 15}s`; // Slower speed
+            snowflake.style.animationDelay = `${Math.random() * 10}s`; // Random delay
 
             snowflakesContainer.appendChild(snowflake);
 
@@ -256,6 +258,7 @@
     </script>
 </body>
 </html>
+
 
 
 
