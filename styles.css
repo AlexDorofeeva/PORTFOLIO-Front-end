@@ -416,16 +416,13 @@ html {
     max-width: 100%;
     margin: 0 auto;
     padding: 0 20px;
-   
-
-   
-
 }
 
 .social-icons {
     list-style-type: none;
     padding: 0;
     display: flex;
+    align-content: ends;
     gap: 20px;
 
 }
@@ -486,5 +483,191 @@ html {
 /* Optional: Add some space between the footer sections */
 .footer-container > * {
     padding: 0 10px;
+}
+
+
+/* Responsive Styling for Header */
+@media screen and (max-width: 1024px) {
+    /* For tablets */
+    .header {
+        flex-direction: column;
+        height: auto;
+        padding: 20px;
+    }
+
+    .text-content {
+        margin: 0; /* Reset the margin */
+        position: relative;
+        text-align: center;
+    }
+
+    .header h1 {
+        font-size: 3rem; /* Adjust font size for smaller screens */
+    }
+
+    .header h3 {
+        font-size: 1.5rem; /* Adjust subtitle size */
+    }
+
+    .profile-photo {
+        position: relative;
+        width: 300px; /* Adjust image size */
+        margin-top: 20px;
+        right: 0; /* Center the image */
+    }
+}
+
+@media screen and (max-width: 768px) {
+    /* For mobile devices */
+    .header {
+        flex-direction: column;
+        height: auto;
+        padding: 10px;
+    }
+
+    .text-content {
+        margin: 0 auto; /* Center the text content */
+        text-align: center;
+    }
+
+    .header h1 {
+        font-size: 2.5rem; /* Smaller font size for mobile */
+    }
+
+    .header h3 {
+        font-size: 1.2rem; /* Smaller subtitle size */
+    }
+
+    .profile-photo {
+        width: 250px; /* Smaller image for mobile */
+        margin-top: 15px;
+    }
+}
+
+
+
+
+
+
+/* Hide nav-links by default on smaller screens */
+.nav-links {
+    display: flex;
+    gap: 15px;
+}
+
+.hamburger {
+    display: none; /* Hidden by default */
+    background: none;
+    border: none;
+    font-size: 2rem;
+    color: #e0e0e0;
+    cursor: pointer;
+    z-index: 1001; /* Ensure it's above other elements */
+}
+
+@media screen and (max-width: 768px) {
+    .nav-links {
+        display: none; /* Hide nav links */
+        flex-direction: column;
+        background: #1f1f1f; /* Background color for mobile dropdown */
+        position: absolute;
+        top: 60px; /* Below the navbar */
+        right: 0;
+        width: 100%;
+        text-align: center;
+        padding: 15px 0;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
+    }
+
+    .nav-links a {
+        display: block;
+        margin: 10px 0;
+    }
+
+    .nav-links.show {
+        display: flex; /* Show when toggled */
+    }
+
+    .hamburger {
+        display: block; /* Show hamburger menu on small screens */
+    }
+}
+
+
+/* Existing styles for the Info Section (keep as is) */
+
+/* Info Section General Layout */
+.extra-info-section {
+    padding: 50px;
+    background-color: #1f1f1f;
+}
+
+.info-container {
+    display: flex;
+    flex-direction: column;
+}
+
+/* Adjusting Info Section for Tablets */
+@media screen and (max-width: 1024px) {
+    .info-row {
+        grid-template-columns: 1fr 1fr; /* Two columns on tablets */
+        grid-template-rows: auto; /* Auto adjust row height */
+        align-items: center; /* Vertically align items */
+    }
+
+    .info-title {
+        font-size: 1.5rem; /* Adjust title size */
+    }
+
+    .info-tech {
+        font-size: 0.9rem; /* Adjust tech text size */
+    }
+
+    .info-card {
+        padding: 20px 0; /* Reduce padding */
+    }
+
+    /* Ensure arrow stays at the end of the row */
+    .info-row .arrow {
+        margin-left: auto; /* Pushes the arrow to the right */
+    }
+}
+
+/* Adjusting Info Section for Mobile */
+@media screen and (max-width: 767px) {
+    .extra-info-section {
+        padding: 30px 15px; /* Reduce padding */
+    }
+
+    .info-row {
+        display: flex; /* Use flexbox for stacking */
+        flex-direction: column; /* Stack the elements vertically */
+        width: 100%;
+        align-items: flex-start; /* Align items to the left */
+    }
+
+    .info-card {
+        padding: 15px 0; /* Reduce padding for smaller screen */
+        margin-bottom: 20px; /* Add spacing between info cards */
+    }
+
+    .info-title {
+        font-size: 1.3rem; /* Adjust title font size */
+    }
+
+    .info-tech {
+        font-size: 0.85rem; /* Adjust tech font size */
+    }
+
+    .arrow {
+        font-size: 1.2rem; /* Adjust arrow size */
+        align-self: flex-end; /* Keeps the arrow at the end of the row */
+        margin-top: 10px; /* Optional: Adds spacing between text and arrow */
+    }
+
+    /* Optionally center align text for mobile */
+    .info-title, .info-tech {
+        text-align: center;
+    }
 }
 
