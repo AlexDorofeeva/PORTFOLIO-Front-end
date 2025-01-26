@@ -10,8 +10,8 @@ function createSnowflake() {
     const size = Math.random() * 15 + 20; // Snowflakes will be slightly larger
     snowflake.style.fontSize = `${size}px`;
     snowflake.style.left = `${Math.random() * 100}vw`; // Random horizontal position
-    snowflake.style.animationDuration = `${Math.random() * 6 + 15}s`; // Slower speed
-    snowflake.style.animationDelay = `${Math.random() * 10}s`; // Random delay
+    snowflake.style.animationDuration = `${Math.random() * 6 + 40}s`; // Slower speed
+    snowflake.style.animationDelay = `${Math.random() * 20}s`; // Random delay
 
     snowflakesContainer.appendChild(snowflake);
 
@@ -21,8 +21,8 @@ function createSnowflake() {
     });
 }
 
-// Generate snowflakes every 350ms
-setInterval(createSnowflake, 350);
+// Generate snowflakes every 600ms
+setInterval(createSnowflake, 600);
 
 // Select all cards
 const cards = document.querySelectorAll('.info-card');
@@ -53,4 +53,14 @@ window.addEventListener("scroll", function () {
       header.classList.remove("parallax");
     }
   });
+  
+
+    const hamburger = document.querySelector(".hamburger");
+    const navLinks = document.querySelector(".nav-links");
+
+    hamburger.addEventListener("click", () => {
+        navLinks.classList.toggle("show");
+    });
+
+
   
