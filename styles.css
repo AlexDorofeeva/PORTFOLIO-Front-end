@@ -2,9 +2,11 @@
 * {
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
+   
 }
-
+html {
+    scroll-behavior: smooth;
+}
 /* Body Styling */
 body {
     font-family: 'Poppins', sans-serif;
@@ -119,7 +121,8 @@ body {
     color: #121212;
     background: #f48fb1;
     text-decoration: none;
-    border-radius: 5px;
+    border-radius: 29px;
+    width: 150px;
     font-weight: bold;
     transition: background 0.3s, color 0.3s;
 }
@@ -193,7 +196,7 @@ html {
 .button-grid {
     display: grid;                         /* Set grid layout */
     grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); /* Create responsive columns */
-    gap: 20px;                             /* Space between buttons */
+    gap: 10px;                             /* Space between buttons */
     justify-content: flex-start;                 /* Center buttons within the grid */
     margin-top: 30px;  
     margin-bottom: 30px;                    /* Add some space above */
@@ -201,18 +204,19 @@ html {
 
 .button {
     padding: 10px 20px;
-    background-color: #f48fb1;            /* Button color (same pink) */
+    background-color: #f48fb1;
     color: white;
-    /* width: 130px; */
     text-decoration: none;
     border-radius: 29px;
     font-weight: bold;
     text-align: center;
-    transition: background 0.3s;
+    transition: transform 0.3s ease, background-color 0.3s ease;
 }
 
 .button:hover {
-    background-color: #c2185b;            /* Hover effect */
+    background-color: #c2185b;  /* Hover effect for background color */
+    transform: scale(1.1); 
+    color: black;      /* Increase the button size by 10% on hover */
 }
 
 
@@ -220,8 +224,21 @@ html {
 
 
 
+.arrow1  {
+    padding: 10px 10px;
+    color: #f48fb1;
+    text-decoration: none;
+    border-radius: 29px;
+    line-height: 1.8;
+    text-align: left;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
 
-
+.arrow1:hover {
+   
+    transform: scale(1.1); 
+    color: black;      /* Increase the button size by 10% on hover */
+}
 
 
 .projects-section {
@@ -241,6 +258,8 @@ html {
     justify-content: space-around;
     gap: 20px;
     flex-wrap: wrap;
+    height: 900px;
+    width: 100%;
 }
 
 .project-card {
@@ -311,7 +330,7 @@ html {
 /* Extra Info Section */
 .extra-info-section {
     text-align: left;
-    padding: 40px;
+    padding: 50px;
     background-color: #1f1f1f;
 }
 
@@ -324,12 +343,12 @@ html {
 .info-container {
     display: flex;
     flex-direction: column;
-    gap: 15px;
+   
 }
 
 .info-card {
     width: 100%;
-    padding: 10px 0;
+    padding: 40px 0;
     border-bottom: 1px solid #000000;
     transition: background-color 0.3s, color 0.3s, transform 0.3s;
 }
@@ -381,3 +400,91 @@ html {
 .info-card:hover .info-tech {
     color: #121212; /* Change text color to dark for better contrast */
 }
+
+
+/* Footer Styles */
+.footer {
+    background-color: #333;
+    color: #fff;
+    padding: 20px 0;
+}
+
+.footer-container {
+    display: flex;
+    justify-content: space-between; /* Spread content between left and right */
+    align-items: center;
+    max-width: 100%;
+    margin: 0 auto;
+    padding: 0 20px;
+   
+
+   
+
+}
+
+.social-icons {
+    list-style-type: none;
+    padding: 0;
+    display: flex;
+    gap: 20px;
+
+}
+
+.social-icons li {
+    display: inline-block;
+  
+}
+
+.social-icon {
+    font-size: 1.5rem;
+    color: #fff;
+    text-decoration: none;
+    transition: transform 0.3s ease, color 0.3s ease;
+
+}
+
+.social-icon:hover {
+    transform: scale(1.1);
+    color: #f48fb1; /* Change to pink color on hover */
+}
+
+.social-icon.telegram:hover {
+    color: #0088cc; /* Specific color for Telegram */
+}
+
+.social-icon.instagram:hover {
+    color: #e4405f; /* Specific color for Instagram */
+}
+
+.social-icon.behance:hover {
+    color: #1769ff; /* Specific color for Behance */
+}
+
+.social-icon.github:hover {
+    color: #333; /* Specific color for GitHub */
+}
+
+.social-icon.linkedin:hover {
+    color: #0077b5; /* Specific color for LinkedIn */
+}
+
+.social-icon.email:hover {
+    color: #d14836; /* Specific color for Email */
+}
+
+/* Copyright Section Styles */
+.copyright {
+    font-size: 1,5rem;
+    color: #a7a2a2;
+}
+
+.copyright p {
+    margin: 0;
+    color: #a7a2a2; /* Lighter color for copyright text */
+}
+
+/* Optional: Add some space between the footer sections */
+.footer-container > * {
+    padding: 0 10px;
+}
+
